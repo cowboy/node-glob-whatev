@@ -36,6 +36,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2012/03/26 - v0.1.4 - Fixed a minor issue with absolute paths on Windows.
 * 2012/03/25 - v0.1.3 - Updated to minimatch 0.2.2+. Minimatch is now exposed as exports.minimatch.
 * 2012/02/14 - v0.1.2 - Fixed an issue with nonexistent directories.
 * 2012/01/23 - v0.1.1 - Fixed an issue with stat and locked files.
