@@ -7,7 +7,7 @@ function normalize(filepath) {
 }
 
 function makeAbsolute(filepath) {
-  var abspath = normalize(path.resolve(process.cwd(), filepath));
+  var abspath = path.resolve(process.cwd(), filepath);
   if (/\/$/.test(filepath)) { abspath += '/'; }
   return abspath;
 }
