@@ -74,5 +74,13 @@ exports['globsync'] = {
     test.deepEqual(globsync.glob('../test/fixture/**/?oo'), fileList([1], prefix), '../test/fixture/**/?oo should match');
     process.chdir('..');
     test.done();
+  },
+  'options.matchBase': function(test) {
+    test.expect(3);
+    var prefix = path.resolve(process.cwd());
+    test.deepEqual(globsync.glob('boot', {matchBase: true}), fileList([0, 4, 5, 6], ''), 'should match.');
+    test.deepEqual(globsync.glob('**/boot', {matchBase: true}), fileList([0, 4, 5, 6], ''), 'should match.');
+    test.deepEqual(globsync.glob('**/b*/boot', {matchBase: true}), fileList([4, 5], ''), 'should match.');
+    test.done();
   }
 };
