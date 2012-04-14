@@ -97,5 +97,13 @@ exports['globsync'] = {
     test.deepEqual(globsync.glob('*', {cwd: 'test/fixture'}), relFileList([0,1]), '* should match');
     test.deepEqual(globsync.glob('*/', {cwd: 'test/fixture'}), relFileList([1]), '* should match');
     test.done();
+  },
+  'options.maxDepth': function(test) {
+    test.expect(4);
+    test.deepEqual(globsync.glob('test/fixture/**', {maxDepth: 1}), fileList([0,1]), 'maxDepth should limit search');
+    test.deepEqual(globsync.glob('test/fixture/**', {maxDepth: 2}), fileList([0,1,2,6]), 'maxDepth should limit search');
+    test.deepEqual(globsync.glob('**', {cwd: 'test/fixture', maxDepth: 1}), relFileList([0,1]), 'maxDepth should limit search');
+    test.deepEqual(globsync.glob('**', {cwd: 'test/fixture', maxDepth: 2}), relFileList([0,1,2,6]), 'maxDepth should limit search');
+    test.done();
   }
 };
