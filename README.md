@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/cowboy/node-glob-whatev.png)](http://travis-ci.org/cowboy/node-glob-whatev)
 # Node Glob, Whatever
 
 A quick and dirty synchronous file globbing utility based on [minimatch](https://github.com/isaacs/minimatch).
